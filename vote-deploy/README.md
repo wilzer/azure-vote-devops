@@ -1,0 +1,1 @@
+# Directory to receive manifest .yaml files.
