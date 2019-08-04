@@ -1,0 +1,41 @@
+# vs-webapplication1 services
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: vs-webapplication1
+  labels:
+    app: vs-webapplication1
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: vs-webapplication1
+---
+apiVersion: extensions/v1beta1  #TODO: Migrate to apps/v1
+kind: Deployment
+metadata:
+  name: vs-webapplication1
+spec:
+  replicas: 3
+  minReadySeconds: 10 # Wait 2 seconds after each new pod comes up before marked as "ready"
+  strategy:
+    type: RollingUpdate # describe how we do rolling updates
+    rollingUpdate:
+      maxUnavailable: 1 # When updating take one pod down at a time
+      maxSurge: 1 # When updating never have more than one extra pod. If replicas = 2 then never 3 pods when updating
+  template:
+    metadata:
+      labels:
+        app: vs-webapplication1
+        version: v1
+    spec:
+      containers:
+      - name: vs-webapplication1
+        image: mikedodaro/webapplication1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
