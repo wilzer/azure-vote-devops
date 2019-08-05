@@ -1,7 +1,7 @@
 ---
 # vs-webapplication1 services
 ##################################################################################################
-apiVersion: v3
+apiVersion: v3.0
 kind: Service
 metadata:
   name: vs-webapplication1
@@ -15,7 +15,7 @@ spec:
   selector:
     app: vs-webapplication1
 ---
-apiVersion: extensions/v3  #TODO: Migrate to apps/v1
+apiVersion: extensions/v3.0  #TODO: Migrate to apps/v1
 kind: Deployment
 metadata:
   name: vs-webapplication1
@@ -31,7 +31,7 @@ spec:
     metadata:
       labels:
         app: vs-webapplication1
-        version: v3
+        version: v3.0
     spec:
       containers:
       - name: vs-webapplication1
