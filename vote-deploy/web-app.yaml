@@ -14,7 +14,7 @@ spec:
   selector:
     app: mywebapp
 ---
-apiVersion: apps/v1  #extensions/v1beta1  #TODO: Migrate to apps/v1
+apiVersion: extensions/v1beta1  #extensions/v1beta1  #TODO: Migrate to apps/v1
 kind: Deployment
 metadata:
   name: mywebapp-v1
