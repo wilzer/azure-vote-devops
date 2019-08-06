@@ -9,7 +9,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 9099
+  - port: 8081
     name: http
   selector:
     app: dockernodejs
@@ -37,5 +37,5 @@ spec:
         image: mikedodaro/dockernodejs
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 9099
+        - containerPort: 8081
 ---
