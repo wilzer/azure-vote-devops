@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: dokernodejs
-        image: andrebriggs/goserver:v1.2
+        image: mikedodaro/dockernodejs
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8099
