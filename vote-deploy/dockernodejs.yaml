@@ -3,21 +3,21 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dokernodejs
+  name: dockernodejs
   labels:
-    app: dokernodejs
+    app: dockernodejs
 spec:
   type: LoadBalancer
   ports:
   - port: 8099
     name: http
   selector:
-    app: dokernodejs
+    app: dockernodejs
 ---
 apiVersion: apps/v1  #TODONE: Migrated to apps/v1 from extensions/v1beta1
 kind: Deployment
 metadata:
-  name: dokernodejs-v1
+  name: dockernodejs
 spec:
   replicas: 3
   minReadySeconds: 10 # Wait 2 seconds after each new pod comes up before marked as "ready"
@@ -29,11 +29,11 @@ spec:
   template:
     metadata:
       labels:
-        app: dokernodejs
+        app: dockernodejs
         version: v1
     spec:
       containers:
-      - name: dokernodejs
+      - name: dockernodejs
         image: mikedodaro/dockernodejs
         imagePullPolicy: IfNotPresent
         ports:
