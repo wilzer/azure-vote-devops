@@ -14,7 +14,7 @@ spec:
   selector:
     app: dockernodejs
 ---
-apiVersion: extensions/v1beta1  #TODONE: Migrated to apps/v1 from extensions/v1beta1
+apiVersion: apps/v1  #TODONE: Migrated to apps/v1 from extensions/v1beta1
 kind: Deployment
 metadata:
   name: dockernodejs
