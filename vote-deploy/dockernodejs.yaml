@@ -30,7 +30,7 @@ spec:
     metadata:
       labels:
         app: dockernodejs
-        version: v1
+        version: latest
     spec:
       containers:
       - name: dockernodejs
