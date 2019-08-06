@@ -9,12 +9,12 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 8099
+  - port: 9099
     name: http
   selector:
     app: dockernodejs
 ---
-apiVersion: apps/v1  #TODONE: Migrated to apps/v1 from extensions/v1beta1
+apiVersion: extensions/v1beta1  #TODONE: Migrated to apps/v1 from extensions/v1beta1
 kind: Deployment
 metadata:
   name: dockernodejs
@@ -37,5 +37,5 @@ spec:
         image: mikedodaro/dockernodejs
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8099
+        - containerPort: 9099
 ---
