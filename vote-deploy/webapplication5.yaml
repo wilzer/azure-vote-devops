@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: webapplication5
-        image: mikedodaro/webapplication6
+        image: mikedodaro/webapplication5
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
