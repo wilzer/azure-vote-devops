@@ -9,7 +9,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 8899
+  - port: 80
     name: http
   selector:
     app: webapplication6
@@ -37,5 +37,5 @@ spec:
         image: mikedodaro/webapplication6
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8899
+        - containerPort: 80
 ---
